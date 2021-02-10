@@ -10,6 +10,17 @@
 
 function letterChecker(str) {
 
+    // NOTE sorts string by converting it to an array, sorting that array, and joing it back into a string
+
+    let sorted = str.split('').sort().join('')
+    let charCode = sorted.charCodeAt(0)
+    for (let i = 0; i < str.length; i++) {
+        console.log(sorted.charCodeAt(i), sorted.charAt(i));
+        if (charCode != sorted.charCodeAt(i)) {
+            return String.fromCharCode(charCode)
+        }
+        charCode++
+    }
 }
 
 

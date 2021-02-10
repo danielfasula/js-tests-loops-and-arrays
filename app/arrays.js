@@ -77,13 +77,27 @@ let flights = [{
 
 
 function flightCost(destination, firstClass) {
-    //***hint: use the find method***
-    // flights.find(findCost)
-
-    // function findCost() {
-
-    // }
+    for (let i = 0; i < flights.length; i++) {
+        if (destination.toUpperCase() == flights[i].to) {
+            // return firstClass == true ? flights[i].prices.firstClass : !firstClass ? flights[i].prices.standard
+            if (firstClass == true) {
+                return flights[i].prices.firstClass
+            } else {
+                return flights[i].prices.standard
+            }
+        }
+    }
 }
+
+//***hint: use the find method***
+// take in a string
+// itterate over flights array
+// find matching flight object
+// return price property based on firstClass == true
+
+// flights.find(findCost)
+// function findCost() {
+// }
 
 
 // ------------------------------------------
@@ -136,12 +150,12 @@ let theBand = {
 }
 
 function bandMemberDetails(name) {
-    console.log(theBand);
-
-    let memberName = theBand.members.find(m => m.name == name)
-    console.log(memberName);
-
-
-    // let member = theBand.find(m => m.name == name)
-    // return `${member.name} is in the band and plays the ${member.instrument}`
+    for (let i = 0; i < bandMember.length; i++) {
+        let bandMember = theBand.members[i]
+        if (name == bandMember.name) {
+            console.log(bandMember);
+            return bandMember
+        }
+    }
 }
+
